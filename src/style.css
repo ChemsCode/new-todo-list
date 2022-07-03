@@ -1,4 +1,173 @@
-.hello{
-    color: red;
-    background: url('./image.png');
+@font-face {
+    font-family: 'myFont';
+    src: url('./Bungee-Regular.ttf') format('ttf');
+    font-weight: 600;
+    font-style: normal;
 }
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    font-family: Arial, sans-serif;
+}
+
+#content{
+    height: 100%; 
+    margin: 0;
+}
+
+#container{
+    min-height: 100%; 
+    display: grid;
+    grid-template-columns: 4fr 10fr;
+}
+
+/* navbar styling
+
+.navbar{
+    grid-column: 1 / 3;
+    font-family: 'myFont';
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    background-color: rgb(150, 150, 150);
+    align-items: center;
+    justify-content: center;
+} */
+
+
+/*sidebar styling*/
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(172, 172, 172);
+}
+
+.sidebar ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vh;
+    gap: 1vh;
+
+}
+
+
+.sidebar ul button{
+    background: rgba(0, 0, 0, 0.1); /* black background with 0.1 opacity */
+    border: none;
+    color: white;
+    padding: 0.01vh 2vh;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+    cursor: pointer;
+    /* border-radius: 100%; */
+}
+
+.sidebar #project-list button{
+    background: rgba(0, 0, 0, 0); /* black background with 0.1 opacity */
+    border: none;
+    color: white;
+    padding: 0.01vh 2vh;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 2%;
+}
+
+
+/*main section styling*/
+
+.main{
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+}
+
+.main button{
+    background: rgba(0, 0, 0, 0.1); /* black background with 0.1 opacity */
+    border: none;
+    padding: 1vw 10vh;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+
+/*css for popup window*/
+
+.loginPopup {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.formPopup {
+    display: none;
+    position: fixed;
+    align-self: center;
+    justify-self: center;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, 5%);
+    border: 3px solid #999999;
+    z-index: 20;
+}
+.formContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1%;
+    margin-top: 2%;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.formContainer label{
+    font-weight: 700;
+}
+.formContainer input[type=checkbox]{
+    margin-left: 5%;
+}
+.formContainer input[type=text],
+.formContainer input[type=number] {
+    width: 80%;
+    padding: 15px;
+    margin: 5px 0 20px 0;
+    border: none;
+    background: #eee;
+}
+  .formContainer input[type=text]:focus,
+  .formContainer input[type=number]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+.formContainer .btn {
+    margin-top: 5%;
+    padding: 12px 20px;
+    border: none;
+    background-color: #8ebf42;
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+.formContainer .cancel {
+    background-color: #cc0000;
+}
+.formContainer .btn:hover,
+.openButton:hover {
+    opacity: 1;
+ }

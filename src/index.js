@@ -1,28 +1,24 @@
-import _ from 'lodash';
 import './style.css'
-import printMe from './print';
-import Icon from './image.png'
+import {sidebarComp} from './components/sidebar';
+import {openForm} from './todo_DOM';
+import {popupFormComp} from './components/popupForm';
+import {mainComp} from './components/main';
+import {popupFormTodoComp} from './components/popupFormTodo';
+
 
 function component() {
     const element = document.createElement('div');
-  
-    // Lodash, currently included via a script, is required for this line to work
-    element.innerHTML = _.join(['Hello', 'chems'], ' ');
-    element.classList.add('hello');
-    const btn = document.createElement('button');
-    
-
-    btn.innerHTML = "Click me and check the console!";
-
-    btn.addEventListener("click", printMe);
-
-    const myImage = new Image();
-    myImage.src = Icon;
-    element.appendChild(myImage);
-    element.appendChild(btn);
-  
+    element.setAttribute('id','container');
+    element.appendChild(sidebarComp());
+    document.getElementById("content").appendChild(popupFormComp());
+    document.getElementById("content").appendChild(popupFormTodoComp());
+    element.appendChild(mainComp());
     return element;
-  }
+}
+ 
+document.getElementById("content").appendChild(component());
 
-  document.body.appendChild(component());
-  
+document.getElementById("+").addEventListener("click", openForm); 
+// document.getElementById("AddProject").addEventListener("click", () => {
+//     console.log("in")
+// }); 

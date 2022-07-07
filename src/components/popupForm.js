@@ -31,7 +31,7 @@ function popupFormComp() {
     formContainer.appendChild(project_name)
 
     
-    //project name label
+    //project description label
     let project_description_label = document.createElement("label");
     project_description_label.innerHTML = "Project Description";
     project_description_label.setAttribute("for", "project_description");

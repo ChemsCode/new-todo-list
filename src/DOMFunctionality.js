@@ -8,7 +8,7 @@ function addProjectDOM(name){
     let liButton = document.createElement("button")
     liButton.setAttribute('id',`${name}`);
     liButton.innerHTML = name;
-    list.appendChild(liButton)
+    newProj.appendChild(liButton)
     list.appendChild(newProj);
     liButton.addEventListener("click", () => {
         const main = document.getElementById("main");
